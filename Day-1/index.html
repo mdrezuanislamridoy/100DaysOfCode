@@ -4,6 +4,388 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Positivus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 1rem;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      nav .logo {
+        flex: 1;
+      }
+      nav .logo img {
+        width: 19px;
+        margin-right: 8px;
+      }
+      nav .navigation {
+        flex: 3;
+      }
+      nav .navigation ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+      }
+      nav .navigation ul li {
+        margin-right: 1rem;
+      }
+      nav .navigation ul button {
+        background-color: black;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      nav .navigation ul button:hover {
+        background-color: #333;
+      }
+
+      .hero-Section {
+        max-width: 1100px;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 400px;
+        padding: 0 1rem;
+      }
+      .left {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .left h1 {
+        font-size: 50px;
+        line-height: 68px;
+      }
+      .left p {
+        width: 380px;
+        margin-bottom: 1rem;
+      }
+      .left button {
+        background-color: black;
+        border: none;
+        padding: 12px;
+        width: 240px;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+      .left button:hover {
+        background-color: #333;
+      }
+      .right {
+        width: 40%;
+      }
+      .right img {
+        width: 100%;
+        height: auto;
+      }
+      .company {
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .company img {
+        width: 120px;
+        height: 30px;
+        margin: 0.5rem;
+        transition: background-color 0.3s;
+      }
+      .company img:hover {
+        background-color: rgba(128, 128, 128, 0.228);
+      }
+      .services {
+        display: flex;
+        max-width: 1100px;
+        margin: auto;
+        align-items: center;
+        padding-left: 1rem;
+      }
+      .services button {
+        background-color: #b9ff66;
+        border: none;
+        padding: 4px 12px;
+        width: 100px;
+        border-radius: 12px;
+        margin-right: 2rem;
+        font-size: 20px;
+      }
+      .services p {
+        width: 500px;
+      }
+
+      .servicess {
+        max-width: 1050px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .servicess div {
+        width: 31%;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+      .servicess div {
+        display: flex;
+        padding: 8px;
+        border-radius: 12px;
+      }
+      .servicess div .left {
+        width: 60%;
+      }
+      .servicess div .right {
+        width: 40%;
+      }
+      .servicess div .right img {
+        width: 100%;
+        height: 95px;
+      }
+      .servicess .left a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+      }
+      .servicess .left a img {
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .first {
+        background-color: #b9ff66;
+      }
+      .second {
+        color: white;
+        background-color: black;
+      }
+      .fourth {
+        color: rgb(90, 90, 90);
+        background-color: rgb(185, 209, 194);
+      }
+      .fifth {
+        color: rgb(90, 90, 90);
+        background-color: rgb(243, 255, 247);
+      }
+      .sixth {
+        color: rgb(90, 90, 90);
+        background-color: rgb(0, 255, 85);
+      }
+      .third {
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+      }
+      .second .left a {
+        color: white;
+      }
+      .starting {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem;
+        background-color: aliceblue;
+        max-width: 1050px;
+        margin: auto;
+        border-radius: 12px;
+        height: 250px;
+      }
+      .starting .left {
+      }
+      .starting .right img {
+        width: 250px;
+        float: right;
+      }
+      @media (max-width: 699px) {
+        .hero-Section {
+          flex-direction: column;
+          height: auto;
+        }
+        .left,
+        .right {
+          width: 100%;
+        }
+        .hero-Section .left {
+          height: 450px;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+        .left h1 {
+          font-size: 48px;
+          text-align: center;
+        }
+        .left p {
+          width: 100%;
+          text-align: center;
+        }
+        .right img {
+          display: none;
+        }
+        .services {
+          flex-direction: column;
+        }
+        .services p {
+          width: 90%;
+          text-align: center;
+          margin-top: 1rem;
+        }
+        .servicess div {
+          width: 90%;
+          margin: 1rem auto;
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1><img src="./img/Icon.png" alt="Positivus Logo" />Positivus</h1>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Use Cases</li>
+            <li>Pricing</li>
+            <li>Blog</li>
+            <button>Request a quote</button>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="hero-Section">
+      <div class="left">
+        <h1>Navigating the digital landscape for success</h1>
+        <p>
+          Our digital marketing agency helps businesses grow and succeed online
+          through a range of services including SEO, PPC, social media
+          marketing, and content creation.
+        </p>
+        <button>Book a consultation</button>
+      </div>
+      <div class="right">
+        <img
+          src="./img/Illustration.png"
+          alt="Digital Marketing Illustration"
+        />
+      </div>
+    </div>
+    <div class="company">
+      <img src="img/logo (1).png" alt="Company Logo 1" />
+      <img src="img/logo (2).png" alt="Company Logo 2" />
+      <img src="img/logo (3).png" alt="Company Logo 3" />
+      <img src="img/logo (4).png" alt="Company Logo 4" />
+      <img src="img/logo (5).png" alt="Company Logo 5" />
+      <img src="img/logo (6).png" alt="Company Logo 6" />
+    </div>
+    <br /><br />
+    <div class="services">
+      <button>Services</button>
+      <p>
+        At our digital marketing agency, we offer a range of services to help
+        businesses grow and succeed online. These services include:
+      </p>
+    </div>
+    <br /><br />
+    <div class="servicess">
+      <div class="first">
+        <div class="left">
+          <h3>
+            Search Engine <br />
+            Optimization
+          </h3>
+          <a href=""><img src="img/arow.png" alt="" />Learn More</a>
+        </div>
+        <div class="right"><img src="img/Illustration (1).png" alt="" /></div>
+      </div>
+      <div class="second">
+        <div class="left">
+          <h3>Pay-Per-Click <br />Advertising</h3>
+          <a href=""><img src="img/arow.png" alt="" />Learn More</a>
+        </div>
+        <div class="right"><img src="img/Illustration (2).png" alt="" /></div>
+      </div>
+      <div class="third">
+        <div class="left">
+          <h3>
+            Social Media <br />
+            Marketing
+          </h3>
+          <a href=""><img src="img/arow.png" alt="" />Learn More</a>
+        </div>
+        <div class="right"><img src="img/Illustration (3).png" alt="" /></div>
+      </div>
+      <div class="fourth">
+        <div class="left">
+          <h3>Email <br />Marketing</h3>
+          <a href=""><img src="img/arow.png" alt="" />Learn More</a>
+        </div>
+        <div class="right"><img src="img/Illustration.png" alt="" /></div>
+      </div>
+      <div class="fifth">
+        <div class="left">
+          <h3>Context <br />Creation</h3>
+          <a href=""><img src="img/arow.png" alt="" />Learn More</a>
+        </div>
+        <div class="right">
+          <img
+            src="img/tokyo-selecting-a-value-in-the-browser-window 1.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="sixth">
+        <div class="left">
+          <h3>Analytics and <br />Tracking</h3>
+          <a href=""><img src="img/arow.png" alt="" />Learn More</a>
+        </div>
+        <div class="right">
+          <img
+            src="img/tokyo-sending-messages-from-one-place-to-another 1.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="starting">
+      <div class="left">
+        <h2>Let’s make things happen</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est soluta
+          eos a blanditiis aliquam animi molestias quae accusantium. Deleniti,
+          et.
+        </p>
+        <button>Get your free proposal</button>
+      </div>
+      <div class="right">
+        <img src="img/Frame 19.png" alt="" />
+      </div>
+    </div>
+  </body>
 </html>
